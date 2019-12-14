@@ -1,0 +1,14 @@
+@import '../../styles/_mixins';
+@import '../../styles/_variables';
+
+.btn {
+  border: 1px solid transparent;
+  background-color: transparent;
+  user-select: none;
+
+  &:disabled {
+    opacity: .65;
+  }
+}
+
+@import './s7-ui-kit-copied-styles/buttons';

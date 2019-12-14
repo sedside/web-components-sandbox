@@ -3,5 +3,6 @@
 module.exports = {
     skipComponentsWithoutExample: true,
     serverPort: 7070,
-    usageMode: 'expand'
+    usageMode: 'expand',
+    ignore: ['**/style-files-to-copy.js']
 };

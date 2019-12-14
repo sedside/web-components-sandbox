@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import Link from './components/link/link';
-import createWebComponent from './web-component-wrapper/wrapper';
+import createWebComponent from './web-component-wrappers/create-web-component';
 
 // import '@eastbanctechru/s7-ui-kit/sass/_mixins.scss';
 // import '@eastbanctechru/s7-ui-kit/sass/_variables.scss';
-import styles from  '@eastbanctechru/s7-ui-kit/css/s7-ui-kit.css';
+// import styles from  '@eastbanctechru/s7-ui-kit/css/s7-ui-kit.css';
 
 // import './style.less';
 

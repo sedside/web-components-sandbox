@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "@eastbanctechru/s7-ui-kit": "^1.9.8",
+    "classnames": "^2.2.6",
     "node-sass": "^4.13.0",
     "react": "16.9.0",
     "react-dom": "16.9.0",
