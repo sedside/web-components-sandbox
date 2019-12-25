@@ -2,4 +2,5 @@ node_modules
 */**/s7-ui-kit-copied-styles
 _mixins.scss
 _variables.scss
+typography.scss
 /.idea/

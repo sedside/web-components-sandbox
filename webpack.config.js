@@ -34,7 +34,7 @@ const config = {
     mode: process.env.NODE_ENV || 'development',
     context: __dirname,
     entry: {
-        main: ['./src/entry.jsx']
+        main: ['./src/index.js']
     },
 
     output: {
@@ -48,7 +48,7 @@ const config = {
             path.resolve(__dirname, 'src'),
             path.resolve(__dirname, 'node_modules'),
         ],
-        extensions: ['.ts', '.tsx', '.js', '.jsx', '.less', '.scss', '.gif']
+        extensions: ['.ts', '.tsx', '.js', '.jsx', '.less', '.scss', '.gif', '.json']
     },
 
     optimization: {

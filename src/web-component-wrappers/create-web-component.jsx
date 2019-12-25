@@ -1,15 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+// import 'custom-elements-es5-adapter';
 
 const createWebComponent = (Component, elementName, attributes) => {
     class CustomElement extends HTMLElement {
         connectedCallback() {
             const customElement = this;
-            const props = [...this.attributes].reduce((props, attribute) => ({
-                    ...props,
-                    [attribute.name]: attribute.value
-                }),
-                { customElement, shadowRoot: this.root });
+            const props = [...this.attributes].reduce((elemProps, attribute) => ({
+                ...elemProps,
+                [attribute.name]: attribute.value
+            }),
+            { customElement, shadowRoot: this.root });
             this.instance = <Component {...props} />;
             this.props = props;
             this.root = this.attachShadow({ mode: 'open' });
@@ -19,7 +20,7 @@ const createWebComponent = (Component, elementName, attributes) => {
         attributeChangedCallback(name, oldValue, newValue) {
             const { shadowRoot, instance, props } = this;
 
-            if (!instance)  {
+            if (!instance) {
                 return;
             }
 

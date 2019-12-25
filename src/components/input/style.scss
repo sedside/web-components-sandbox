@@ -3,3 +3,12 @@
 @import '../../styles/common.scss';
 
 @import './s7-ui-kit-copied-styles/forms';
+
+.s7-form-label-left {
+  display: flex;
+
+  .s7-form-label {
+    flex-basis: 16.66%;
+    align-self: center;
+  }
+}

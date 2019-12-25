@@ -1,6 +1,6 @@
 import * as React from 'react';
-import Style from 'style-it';
 import classnames from 'classnames';
+import Style from 'style-it';
 
 import styles from './style.scss';
 
@@ -12,7 +12,6 @@ const Button = ({
     onClick,
     isDisabled,
     isSubmit,
-    className,
     type = 'primary',
     size,
     ...props
@@ -21,7 +20,7 @@ const Button = ({
         {styles.toString()}
         <div>
             <button
-                className={classnames(className, 'btn', `btn-${type}`, size ? `btn-${size}` : '')}
+                className={classnames('btn', `btn-${type}`, size ? `btn-${size}` : '')}
                 onClick={onClick}
                 disabled={isDisabled}
                 type={isSubmit ? 'submit' : 'button'}
@@ -32,5 +31,8 @@ const Button = ({
         </div>
     </Style>
 );
+
+Button.featureFlagName = 'aeroexpressServiceCancelEnabled';
+Button.isNewFeature = false;
 
 export default Button;

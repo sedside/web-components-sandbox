@@ -6,10 +6,10 @@ const STYLE_LIB_PATH = path.resolve(__dirname, 'node_modules', '@eastbanctechru/
 const COMPONENTS_PATH = path.resolve(__dirname, 'src', 'components');
 const FILE_LIST_NAME = 'style-files-to-copy';
 const COPIED_FILES_FOLDER_NAME = 's7-ui-kit-copied-styles';
-const COMMON_STYLE_FILES = ['_mixins.scss', '_variables.scss'];
+const COMMON_STYLE_FILES = ['_mixins.scss', '_variables.scss', 'typography.scss'];
 const IMPORT_REGEXP = /@import(.+);/g;
 
-function removeImports (file) {
+function removeImports(file) {
     const matches = file.match(IMPORT_REGEXP);
 
     if (!matches) {
@@ -23,9 +23,16 @@ function removeImports (file) {
     return newFile;
 }
 
-function copyFile (sourcePath, targetPath, fileName) {
-    const copy = (path1, path2) => fs.copyFileSync(path.resolve(path1, fileName), path.resolve(path2, fileName));
-    const write = (content, target) => fs.writeFileSync(path.resolve(target, fileName), content, { encoding: 'utf-8' });
+function copyFile(sourcePath, targetPath, fileName) {
+    const copy = (path1, path2) => fs.copyFileSync(
+        path.resolve(path1, fileName),
+        path.resolve(path2, fileName)
+    );
+    const write = (content, target) => fs.writeFileSync(
+        path.resolve(target, fileName),
+        content,
+        { encoding: 'utf-8' }
+    );
 
     const styleFileFromLib = fs.readFileSync(path.resolve(sourcePath, fileName)).toString('utf-8');
     const hasImports = IMPORT_REGEXP.test(styleFileFromLib);
@@ -63,6 +70,7 @@ COMMON_STYLE_FILES.forEach(filePath => copyFile(STYLE_LIB_PATH, STYLES_DIR_PATH,
 const components = fs.readdirSync(COMPONENTS_PATH);
 components.forEach(component => {
     try {
+        // eslint-disable-next-line global-require,import/no-dynamic-require
         const filesToCopy = require(path.resolve(COMPONENTS_PATH, component, FILE_LIST_NAME));
         const folderNameToCopy = path.resolve(COMPONENTS_PATH, component, COPIED_FILES_FOLDER_NAME);
 

@@ -6,6 +6,7 @@
   "dependencies": {
     "@eastbanctechru/s7-ui-kit": "^1.9.8",
     "classnames": "^2.2.6",
+    "custom-elements-es5-adapter": "^1.0.0",
     "node-sass": "^4.13.0",
     "react": "16.9.0",
     "react-dom": "16.9.0",
@@ -20,6 +21,7 @@
     "@babel/preset-env": "^7.2.0",
     "@babel/preset-react": "7.0.0",
     "@babel/preset-typescript": "^7.7.4",
+    "@testing-library/react": "^9.4.0",
     "@types/classnames": "^2.2.9",
     "@types/react": "^16.9.13",
     "@types/react-dom": "^16.9.4",
@@ -63,7 +65,8 @@
     "start": "webpack-dev-server",
     "server": "supervisor ./mock/server.js",
     "test": "jest",
-    "postinstall": "node copy-styles-and-fonts.js"
+    "postinstall": "node copy-styles-and-fonts.js",
+    "build": "webpack"
   },
   "repository": "",
   "author": "author",

@@ -1,0 +1,23 @@
+/* font-family: 'NimbusSanReg'; */
+@font-face {
+  font-family: 'NimbusSan';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/nimbussannov-reg-webfont.eot?') format('eot'), url('../fonts/NimbusSanNov-Reg.woff') format('woff'), url('../fonts/NimbusSanNov-Reg.woff2') format('woff2'), url('../fonts/NimbusSanNov-Reg.ttf') format('truetype'), url('../fonts/NimbusSanNov-Reg.svg#NimbusSansReg') format('svg');
+}
+
+/* font-family: "NimbusSanMed"; */
+@font-face {
+  font-family: 'NimbusSan';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/nimbussannov-med-webfont.eot?') format('eot'), url('../fonts/NimbusSanNov-Med.woff') format('woff'), url('../fonts/NimbusSanNov-Med.woff2') format('woff2'), url('../fonts/NimbusSanNov-Med.ttf') format('truetype'), url('../fonts/NimbusSanNov-Med.svg#NimbusSansMed') format('svg');
+}
+
+/* font-family: "NimbusSanSemBol"; */
+@font-face {
+  font-family: 'NimbusSan';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../fonts/nimbussannov-sembol-webfont.eot?') format('eot'), url('../fonts/NimbusSanNov-SemBol.woff') format('woff'), url('../fonts/NimbusSanNov-SemBol.woff2') format('woff2'), url('../fonts/NimbusSanNov-SemBol.ttf') format('truetype'), url('../fonts/NimbusSanNov-SemBol.svg#NimbusSansSemBol') format('svg');
+}

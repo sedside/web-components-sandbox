@@ -1,3 +1,21 @@
 * {
     box-sizing: border-box;
+    outline: none;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    color: #747679;
+    font: 16px/1.2 NimbusSan;
+    font-weight: 400;
+    height: 100%;
+    width: 100%;
+}
+
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font-size: inherit;
+    line-height: inherit;
 }

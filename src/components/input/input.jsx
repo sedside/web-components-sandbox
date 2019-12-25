@@ -1,8 +1,7 @@
 import * as React from 'react';
-import Style from 'style-it';
 import classnames from 'classnames';
 
-import styles from './style.scss';
+import './style.scss';
 
 /**
  * Инпут
@@ -13,27 +12,50 @@ const Input = ({
     onChange,
     isDisabled,
     isRequired,
-    isFloatingLabel,
-    className,
     size,
+    labelSize,
     name = 'input',
+    labelPosition,
     /** no-border для инпутов только с нижней границей */
     type = 'common',
     ...props
-}) => (
-    <Style>
-        {styles.toString()}
-        <div className="s7-form-group">
+}) => {
+    const getFormGroupClassName = () => classnames(
+        's7-form-group',
+        {
+            's7-form-label-left': labelPosition === 'left',
+            's7-form-group-req': isRequired && !label
+        }
+    );
+
+    const getClassName = () => classnames(
+        's7-form-control',
+        {
+            's7-form-control-lg': size === 'lg',
+            's7-form-control-no-border': type === 'no-border'
+        }
+    );
+
+    const getLabelClassName = () => classnames(
+        's7-form-label',
+        {
+            's7-form-label-xl': labelSize === 'lg',
+            's7-form-label-req': isRequired && label
+        }
+    );
+
+    return (
+        <div className={getFormGroupClassName()}>
             {label && (
                 <label
                     htmlFor={name}
-                    className="s7-form-label"
+                    className={getLabelClassName()}
                 >
                     {label}
                 </label>
             )}
             <input
-                className="s7-form-control s7-form-control-lg"
+                className={getClassName()}
                 placeholder={placeholder}
                 onChange={onChange}
                 disabled={isDisabled}
@@ -41,7 +63,7 @@ const Input = ({
                 {...props}
             />
         </div>
-    </Style>
-);
+    );
+};
 
 export default Input;
