@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "strict": true,
+    "noUnusedLocals": true,
+    "outDir": "./build/",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "target": "es6",
+    "jsx": "react",
+    "types": [
+      "react",
+      "react-dom"
+    ],
+    "esModuleInterop": true
+  },
+  "exclude": [
+    "./node_modules/**/*"
+  ],
+  "includes": [
+    "./types/externals.d.ts"
+  ]
+}
